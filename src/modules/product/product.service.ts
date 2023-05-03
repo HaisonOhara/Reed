@@ -18,6 +18,9 @@ export class ProductsService {
     return this.productRepository.findOneBy({ id });
   }
 
+  async createProduct(): Promise<void> {
+    this.productRepository.create({});
+  }
   async remove(id: string): Promise<void> {
     await this.productRepository.delete(id);
   }
